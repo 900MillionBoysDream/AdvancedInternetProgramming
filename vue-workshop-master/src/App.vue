@@ -2,9 +2,9 @@
   <div id="app">
     <div class="sports-field">
       <h1 style="color: palevioletred;">{{ title }}</h1>
-      <board :score="score" :miss="miss"></board>
+      <board :results="results"></board>
       <goal></goal>
-      <ball :image="src" @score="score ++" @miss="miss ++"></ball>
+      <ball :image="src" @score="storeResult('score')" @miss="storeResult('miss')"></ball>
     </div>
   </div>
 </template>
@@ -22,6 +22,7 @@ export default {
 
   data () {
     return {
+      results: [],
       score: 0,
       miss: 0,
       status: '',
@@ -32,6 +33,9 @@ export default {
   },
 
   methods: {
+    storeResult (results){
+      this.results.push(results)
+    },
     // shoot () { 
     //   const results = [
     //     'miss',
@@ -45,12 +49,12 @@ export default {
     //   }, 800)
     // },
 
-    // reset () {
-    //   this.status = 'reset'
-    //   setTimeout(() => {
-    //     this.status = ''
-    //   }, 500)
-    // },
+    reset () {
+      this.status = 'reset'
+      setTimeout(() => {
+        this.status = ''
+      }, 500)
+    },
 
     // imageSrc(){
     //   return '/static/soccer-ball.png'

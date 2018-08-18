@@ -8,9 +8,32 @@
 <script>
 export default {
     props: [
-        'score',
-        'miss'
-    ]
+        'results'
+    ],
+
+    computed: {
+        score(){
+            var score = 0
+
+            for (var i =0; i <this.results.length; i++){
+                if (this.results(i)  == 'score'){
+                    score ++
+                }
+            }
+            return score
+        },
+
+        miss(){
+            var miss = 0
+
+            for (var i =0; i <this.results.length; i++){
+                if (this.results(i)  == 'miss'){
+                    miss ++
+                }
+            }
+            return miss
+        }
+    }
 }
 </script>
 
