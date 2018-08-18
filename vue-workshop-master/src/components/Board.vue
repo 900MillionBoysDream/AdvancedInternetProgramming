@@ -2,6 +2,11 @@
     <div class="board">
         <div class="board-score">Your score is {{ score }}</div>
         <div class="board-miss">You missed {{ miss }}</div>
+        <ol>
+            <li v-for="result in results">
+                {{  result }}
+            </li>
+        </ol>
     </div>
 </template>
 
@@ -16,7 +21,7 @@ export default {
             var score = 0
 
             for (var i =0; i <this.results.length; i++){
-                if (this.results(i)  == 'score'){
+                if (this.results[i]  == 'score'){
                     score ++
                 }
             }
@@ -27,7 +32,7 @@ export default {
             var miss = 0
 
             for (var i =0; i <this.results.length; i++){
-                if (this.results(i)  == 'miss'){
+                if (this.results[i]  == 'miss'){
                     miss ++
                 }
             }
