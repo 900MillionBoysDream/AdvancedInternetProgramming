@@ -20,7 +20,7 @@
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
     "concurrently": "^4.0.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "gravatar": "^1.6.0",
     "jsonwebtoken": "^8.2.0",
     "mongoose": "^5.0.12",
